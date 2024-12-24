@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import InboxIcon from '@material-ui/icons/Inbox';
 import CreateIcon from '@material-ui/icons/Create';
+import ListIcon from '@material-ui/core/icons/List';
 
 import Screen from '../../lib/screen';
 import { withStyles } from '@material-ui/core/styles';
@@ -77,9 +78,14 @@ const Pane = ({classes}) => (
           <ListItemIcon>
             <CreateIcon/>
           </ListItemIcon>
-          <ListItemText>Create Order</ListItemText>
+          <ListItemText>Create Order</ListItemText>  
         </MenuItem>
-
+        <MenuItem onClick={ History.push.bind(History, '/orders') }>
+          <ListItemIcon>
+            <ListIcon/>
+          </ListItemIcon>
+          <ListItemText>Orders</ListItemText>  
+        </MenuItem>
       </MenuList>
     </div>
   </Drawer>

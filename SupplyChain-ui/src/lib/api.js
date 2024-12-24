@@ -14,11 +14,11 @@ class Api {
     return new URL(this.hostUri);
   }
 
-  async get() {
+  async getOrders(address) {
 
     let url = this.host;
-    // url.pathname += 'user';
-    // url.searchParams.append('coin', coin);
+    url.pathname += 'orders';
+    url.searchParams.append('address', address);
 
     const options = {
       method: 'GET',
@@ -27,7 +27,7 @@ class Api {
         'Content-Type': 'application/json',
         'Origin': '',
         'Host': this.hostUri,
-        'Authorization': this.apiKey
+        //'Authorization': this.apiKey
       }
     };
 

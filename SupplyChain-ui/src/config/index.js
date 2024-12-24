@@ -1,5 +1,5 @@
 const {
-  REACT_APP_API,
+  REACT_APP_API = 'http://localhost:8080',
   REACT_API_KEY = 'key',
   REACT_APP_ADDRESS = '0x7106A6d32a30eA41D25A1d5dcC03d08F70bA4B99'
 } = process.env;

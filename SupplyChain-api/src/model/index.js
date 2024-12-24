@@ -1,5 +1,5 @@
-const Event = require('./Event');
+const Order = require('./Order');
 
 module.exports = {
-    Event
+    Order
 };

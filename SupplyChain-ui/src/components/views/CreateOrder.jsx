@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import OrderForm from '../components/OrderForm';
 import { compose } from '../../lib/util'; 
 import { connect } from 'react-redux';
@@ -16,10 +15,6 @@ const CreateOrder = ({newOrderTx, pending, createOrder}) =>
             }
         </div>
     );        
-
-CreateOrder.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
 
 export default compose(
     connect(
