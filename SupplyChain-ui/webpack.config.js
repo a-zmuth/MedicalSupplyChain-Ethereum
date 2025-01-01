@@ -1,46 +1,54 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js', 
+  entry: './src/index.js',
   output: {
-    filename: 'bundle.js', 
-    path: path.resolve(__dirname, 'dist'), 
-    publicPath: '/', 
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'], 
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, 
-        exclude: /node_modules/, 
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', 
+          loader: 'babel-loader',
         },
       },
       {
-        test: /\.css$/, 
-        use: ['style-loader', 'css-loader'], 
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf|svg|png|jpe?g|gif)$/, 
-        type: 'asset/resource', 
-        generator: {
-          filename: 'assets/[name].[hash][ext]', 
+        test: /\.(png|jpg|gif|svg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
         },
       },
     ],
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  mode: 'development',
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'public'), 
+      directory: path.join(__dirname, 'public'),
     },
-    historyApiFallback: true, 
-    compress: true, 
-    open: true,
-    port: 3000, 
-    hot: true,   },
-
-  devtool: 'source-map', // Generate source maps for easier debugging
+    compress: true,
+    port: 8080,
+    historyApiFallback: true,
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.REACT_APP_API': JSON.stringify(process.env.REACT_APP_API || 'http://localhost:8080'),
+      'process.env.REACT_API_KEY': JSON.stringify(process.env.REACT_API_KEY || 'key'),
+      'process.env.REACT_APP_ADDRESS': JSON.stringify(process.env.REACT_APP_ADDRESS || '0x7106A6d32a30eA41D25A1d5dcC03d08F70bA4B99'),
+    }),
+  ],
 };

@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import InboxIcon from '@material-ui/icons/Inbox';
 import CreateIcon from '@material-ui/icons/Create';
-import ListIcon from '@material-ui/core/icons/List';
+import ListIcon from '@material-ui/icons/List';
 
 import Screen from '../../lib/screen';
 import { withStyles } from '@material-ui/core/styles';

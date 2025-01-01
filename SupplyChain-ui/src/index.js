@@ -2,7 +2,7 @@ import 'normalize.css';
 import 'core-js/es6/map';
 import 'core-js/es6/set';
 
-import 'lib/api';
+import './lib/api';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
