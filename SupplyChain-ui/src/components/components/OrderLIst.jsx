@@ -43,7 +43,7 @@ const OrderList = ({ classes, orders }) => {
 
 OrderList.propTypes = {
     classes: PropTypes.object.isRequired,
-    orders: PropTypes.array, // Add type for orders if needed
+    orders: PropTypes.array, 
 };
 
 export default withStyles(styles)(OrderList);

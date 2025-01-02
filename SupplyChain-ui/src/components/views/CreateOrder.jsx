@@ -5,16 +5,18 @@ import { connect } from 'react-redux';
 import { createOrder } from '../../actions/orders';
 import { CircularProgress, Typography } from '@material-ui/core';
 
-const CreateOrder = ({newOrderTx, pending, createOrder}) =>
-    (pending ?
-        <CircularProgress/> :
-        <div>
-            <OrderForm onSubmit = {createOrder}/>
-            {
-                ((!!newOrderTx) ? <Typography>order { newOrderTx }</Typography> : <p/>)
-            }
-        </div>
-    );        
+const CreateOrder = ({ newOrderTx, pending, createOrder }) => {
+    return (
+        pending ? (
+            <CircularProgress />
+        ) : (
+            <div> 
+                <OrderForm onSubmit={createOrder} />
+                {newOrderTx && <Typography>Order TX: {newOrderTx}</Typography>}
+            </div>
+        )
+    );
+};
 
 export default compose(
     connect(
@@ -23,7 +25,7 @@ export default compose(
             pending: state.orders.pending
         }),
         dispatch => ({
-            CreateOrder: order => dispatch(createOrder(order))
+            createOrder: order => dispatch(createOrder(order)) 
         })
     )
 )(CreateOrder);

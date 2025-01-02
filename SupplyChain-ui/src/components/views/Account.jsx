@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { compose } from '../../lib/util'; 
 import { connect } from 'react-redux';
-import  { getAddress} from '../../actions/account';
+import { getAddress } from '../../actions/account';
 import { CircularProgress } from '@material-ui/core';
 
 const styles = {
@@ -22,7 +22,6 @@ const styles = {
 };
 
 class Account extends React.Component {
-
     componentDidMount() {
         this.props.getAddress();
     }
@@ -32,10 +31,10 @@ class Account extends React.Component {
         return (
             <Card className={classes.card}>
                 <CardContent>
-                    {loading ? <CircularProgress/> 
+                    {loading ? <CircularProgress /> 
                      :
                         <Typography className={classes.title} color="textSecondary" gutterBottom>
-                            {address}
+                            {address ? address : "No account connected"}
                         </Typography>
                     }
                 </CardContent>
@@ -52,7 +51,7 @@ export default compose(
     withStyles(styles),
     connect(
         state => ({
-            address: state.account.addresss,
+            address: state.account.address, 
             loading: state.account.loading
         }),
         dispatch => ({

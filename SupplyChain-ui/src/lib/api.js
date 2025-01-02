@@ -1,7 +1,7 @@
 import {
   hostUri, apiKey
 } from '../config/index';
-import { fetch } from '../lib/util';
+import  { fetch }  from '../lib/util';
 
 class Api {
 

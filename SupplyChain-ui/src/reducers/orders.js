@@ -6,7 +6,9 @@ import {
     ORDER_CREATION,
     ORDER_CREATION_SUCCESS,
     ORDERS_LOAD,
-    ORDERS_LOAD_SUCCESS
+    ORDERS_LOAD_SUCCESS,
+    ORDER_ACTION,
+    ORDER_ACTION_SUCCESS
 } from '../constants/action';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
