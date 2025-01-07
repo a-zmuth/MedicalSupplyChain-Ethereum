@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a full-stack DApp built with Node.js, Express, MongoDB, React, and Next.js. It serves as a platform for users to interact with smart contracts, manage tasks, and store user data in a blockchain-based environment.
+This project is a full-stack DApp built with Solidity, Node.js, Express, MongoDB, React, and Next.js. It serves as a platform for users to interact with the smart contract by creating orders [Supplier], starting and stopping deliveries [Delivery company], and accepting and denying orders [Customer], all within a blockchain-based environment.
 
 ## Technologies Used
 
@@ -15,7 +15,7 @@ This project is a full-stack DApp built with Node.js, Express, MongoDB, React, a
 
 - Connect to MetaMask for wallet integration
 - Store and retrieve tasks from a MongoDB database while also storing on the blockchain, obviously...
-- Interact with Ethereum smart contracts
+- Interact with the Ethereum smart contract
 - User-friendly React frontend with Next.js for server-side rendering
 
 ## Requirements
