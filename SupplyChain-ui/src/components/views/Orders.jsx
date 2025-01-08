@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { CircularProgress } from '@material-ui/core';
-import OrderList from '../components/OrderLIst'; 
+import OrderList from '../../components/components/OrderList'; 
 
 import { compose } from '../../lib/util'; 
 import { connect } from 'react-redux';

@@ -22,6 +22,11 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.json$/,
+        type: 'javascript/auto',
+        loader: 'json-loader',
+      },  
+      {
         test: /\.(png|jpg|gif|svg)$/,
         use: {
           loader: 'file-loader',
@@ -49,6 +54,7 @@ module.exports = {
       'process.env.REACT_APP_API': JSON.stringify(process.env.REACT_APP_API || 'http://localhost:8080'),
       'process.env.REACT_API_KEY': JSON.stringify(process.env.REACT_API_KEY || 'key'),
       'process.env.REACT_APP_ADDRESS': JSON.stringify(process.env.REACT_APP_ADDRESS || '0x7106A6d32a30eA41D25A1d5dcC03d08F70bA4B99'),
+      'process.env.REACT_APP_RPC_URL': JSON.stringify(process.env.REACT_APP_RPC_URL || 'http://127.0.0.1:7545'),
     }),
   ],
 };
